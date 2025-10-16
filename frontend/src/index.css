@@ -1,0 +1,370 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to bottom, var(--brand-navy), var(--brand-dark));
+  color: var(--brand-light);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+}
+
+.unthinkable-text {
+  font-size: clamp(8rem, 35vw, 30rem);
+  font-weight: 900;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.03;
+  pointer-events: none;
+  background: linear-gradient(120deg, transparent, var(--brand-blue) 70%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% 200%;
+  animation: wave 8s ease-in-out infinite;
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+}
+
+.wormhole-dropzone {
+  border: 2px solid rgba(58, 139, 255, 0.2);
+  background: radial-gradient(circle at center,
+    rgba(12, 15, 23, 0.3) 0%,
+    rgba(0, 11, 31, 0.6) 30%,
+    rgba(12, 15, 23, 0.9) 70%
+  );
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 30px rgba(58, 139, 255, 0.1);
+}
+
+.wormhole-dropzone:hover {
+  border-color: rgba(58, 139, 255, 0.7);
+  box-shadow: 0 0 50px rgba(58, 139, 255, 0.2);
+  transform: scale(1.02);
+}
+
+.wormhole-swirl {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    rgba(58, 139, 255, 0.1) 25%,
+    rgba(58, 139, 255, 0.3) 50%,
+    rgba(58, 139, 255, 0.1) 75%,
+    transparent 100%
+  );
+  animation: swirl 6s linear infinite;
+  border-radius: 50%;
+  filter: blur(8px);
+}
+
+.drop-text {
+  z-index: 1;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+/* Custom slider styles */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #1e293b; /* slate-800 */
+  border-radius: 9999px;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity .2s;
+}
+
+input[type="range"]:hover {
+  opacity: 1;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--brand-blue);
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid var(--brand-navy);
+  box-shadow: 0 0 10px var(--brand-blue);
+  transition: all 0.2s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px var(--brand-blue);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: var(--brand-blue);
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid var(--brand-navy);
+  box-shadow: 0 0 10px var(--brand-blue);
+  transition: all 0.2s ease;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px var(--brand-blue);
+}
+
+
+/* Theme Color Mapping */
+:root {
+  --brand-dark: #0C0F17;
+  --brand-blue: #3A8BFF;
+  --brand-navy: #000B1F;
+  --brand-gray: #2A2D35;
+  --brand-light: #E0E1E6;
+  
+  /* Shadows */
+  --shadow-color: #000000;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.2);
+
+  /* Glows */
+  --glow-sm: 0 0 5px rgba(58, 139, 255, 0.2);
+  --glow-md: 0 0 15px rgba(58, 139, 255, 0.3);
+  --glow-lg: 0 0 30px rgba(58, 139, 255, 0.4);
+}
+
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--brand-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brand-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(58, 139, 255, 0.8);
+}
+
+/* Optimize images for better quality */
+img {
+  image-rendering: auto;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Cloudinary images */
+img[src*="cloudinary.com"] {
+  image-rendering: auto;
+}
+
+/* Optimize images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Custom range slider with theme */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-track {
+  background: var(--muted);
+  height: 8px;
+  border-radius: var(--radius);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 2px solid var(--background);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 2px solid var(--background);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  border: none;
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Glass morphism effect with theme */
+.glass {
+  background: var(--card);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Focus states with theme */
+select:focus,
+input:focus,
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--ring);
+  border-color: var(--primary);
+}
+
+/* Dark mode specific adjustments */
+.dark select option {
+  background-color: var(--card);
+  color: var(--foreground);
+}
+
+/* Theme-aware animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Import Google Fonts for Architects Daughter */
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Glass effect utility */
+.glass {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-foreground);
+}
+
+/* Theme toggle animation */
+@keyframes themeToggle {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.1); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+.theme-toggle-active {
+  animation: themeToggle 0.6s ease-in-out;
+}
+
+/* Enhanced slider styling */
+.slider-enhanced::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 3px solid var(--background);
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-enhanced::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: var(--shadow-xl);
+}
+
+.slider-enhanced::-moz-range-thumb {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 3px solid var(--background);
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-enhanced::-moz-range-thumb:hover {
+  transform: scale(1.2);
+}
+
+/* Floating animation enhancement */
+@keyframes floatEnhanced {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-8px) rotate(1deg); }
+  50% { transform: translateY(-15px) rotate(0deg); }
+  75% { transform: translateY(-8px) rotate(-1deg); }
+}
+
+.animate-float-enhanced {
+  animation: floatEnhanced 4s ease-in-out infinite;
+}
+
+/* Pulse glow effect */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 5px var(--accent); }
+  50% { box-shadow: 0 0 20px var(--accent), 0 0 30px var(--accent); }
+}
+
+.pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
