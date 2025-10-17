@@ -8,6 +8,7 @@
   <img src="https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind"/>
   <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" alt="TensorFlow"/>
 </div>
+<img width="1024" height="1024" alt="Gemini_Generated_Image_cy33a6cy33a6cy33" src="https://github.com/user-attachments/assets/30d6736a-ea0f-4f3c-a6bb-5a41ca1762b3" />
 
 <div align="center">
   <h3>✨ Discover Visually Similar Products Using AI ✨</h3>
