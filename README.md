@@ -8,7 +8,6 @@
   <img src="https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind"/>
   <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" alt="TensorFlow"/>
 </div>
-<img width="1024" height="1024" alt="Gemini_Generated_Image_cy33a6cy33a6cy33" src="https://github.com/user-attachments/assets/30d6736a-ea0f-4f3c-a6bb-5a41ca1762b3" />
 
 <div align="center">
   <h3>✨ Discover Visually Similar Products Using AI ✨</h3>
@@ -36,6 +35,7 @@ graph TD
 ## 📝 Project Overview
 
 UnthinkableVision is an innovative fashion search platform that combines cutting-edge AI technology with an intuitive user interface. The system processes fashion product images through deep learning models to generate vector embeddings, enabling sophisticated similarity-based search capabilities.
+<img width="1024" height="1024" alt="Gemini_Generated_Image_cy33a6cy33a6cy33" src="https://github.com/user-attachments/assets/30d6736a-ea0f-4f3c-a6bb-5a41ca1762b3" />
 
 ### Key Components
 
