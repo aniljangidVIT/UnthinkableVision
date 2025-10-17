@@ -43,18 +43,18 @@ export default function ResultCard({ product }) {
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
         
         {/* Floating Action Buttons */}
-        <div className="absolute top-4 right-4 flex flex-col gap-3 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-4 group-hover:translate-x-0">
+  <div className="absolute top-4 right-4 button-group flex-col opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-4 group-hover:translate-x-0">
           <motion.button
             whileHover={{ scale: 1.2, rotate: 12 }}
             whileTap={{ scale: 0.9 }}
-            className="p-3 backdrop-blur-md rounded-2xl bg-brand-blue/20 border border-brand-blue/30 text-brand-light shadow-lg shadow-brand-blue/20 hover:bg-brand-blue/30 transition-all"
+            className="deep-btn small"
           >
             <Heart className="w-5 h-5" />
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.2, rotate: -12 }}
             whileTap={{ scale: 0.9 }}
-            className="p-3 backdrop-blur-md rounded-2xl bg-brand-blue/20 border border-brand-blue/30 text-brand-light shadow-lg shadow-brand-blue/20 hover:bg-brand-blue/30 transition-all"
+            className="deep-btn small"
           >
             <ExternalLink className="w-5 h-5" />
           </motion.button>

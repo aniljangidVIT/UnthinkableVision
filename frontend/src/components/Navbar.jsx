@@ -40,7 +40,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <div className="relative">
+            <div className="relative logo-animate">
               <div className="p-2 rounded-xl shadow-lg bg-brand-blue/20 border border-brand-blue/30">
                 <Sparkles className="w-6 h-6 text-brand-light" />
               </div>
@@ -51,61 +51,45 @@ export default function Navbar() {
               />
             </div>
             <div>
-              <h1 className="text-2xl font-bold tracking-tight text-brand-light">
-                Pixfind
-              </h1>
-              <p className="text-xs text-brand-blue/70">
-                AI-Powered Visual Search
-              </p>
+              <h1 className="site-title header-glow">Pixfind</h1>
+              <p className="site-subtitle">AI-Powered Visual Search</p>
             </div>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex btn-group items-center">
             <motion.a
               href="#search"
-              className="flex items-center space-x-2 px-4 py-2 rounded-lg transition-all text-brand-gray"
-              whileHover={{ 
-                scale: 1.05,
-                className: "text-brand-light"
-              }}
+              className="deep-btn small"
+              whileHover={{ scale: 1.08 }}
             >
               <Search className="w-4 h-4" />
               <span className="font-medium">Search</span>
             </motion.a>
-
             <motion.a
               href="#about"
-              className="px-4 py-2 rounded-lg transition-all font-medium text-brand-gray"
-              whileHover={{ 
-                scale: 1.05,
-                className: "text-brand-light"
-              }}
+              className="deep-btn small"
+              whileHover={{ scale: 1.08 }}
             >
               About
             </motion.a>
-
             <motion.a
               href="#contact"
-              className="px-4 py-2 rounded-lg transition-all font-medium"
-              style={{ color: 'var(--muted-foreground)' }}
-              whileHover={{ 
-                scale: 1.05,
-                color: 'var(--foreground)'
-              }}
+              className="deep-btn small"
+              whileHover={{ scale: 1.08 }}
             >
               Contact
             </motion.a>
           </div>
 
           {/* Right Section */}
-          <div className="flex items-center space-x-4">
+          <div className="btn-group items-center">
             {/* Theme Toggle */}
             <motion.button
               onClick={toggleTheme}
-              className="p-2 rounded-xl shadow-lg transition-all relative overflow-hidden bg-brand-blue/20 border border-brand-blue/30"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+              className="deep-btn small"
+              whileHover={{ scale: 1.13 }}
+              whileTap={{ scale: 0.93 }}
             >
               <motion.div
                 initial={false}
@@ -118,21 +102,13 @@ export default function Navbar() {
                   <Sun className="w-5 h-5 text-brand-light" />
                 )}
               </motion.div>
-              
-              {/* Glow Effect */}
-              <motion.div
-              className="absolute inset-0 rounded-xl opacity-0 bg-brand-blue"
-              whileHover={{ opacity: 0.2 }}
-              transition={{ duration: 0.2 }}
-              />
             </motion.button>
-
             {/* Mobile Menu Toggle */}
             <motion.button
               onClick={toggleMenu}
-              className="md:hidden p-2 rounded-xl shadow-lg bg-brand-blue/20 border border-brand-blue/30"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+              className="md:hidden deep-btn small"
+              whileHover={{ scale: 1.13 }}
+              whileTap={{ scale: 0.93 }}
             >
               <motion.div
                 initial={false}
@@ -159,28 +135,28 @@ export default function Navbar() {
           transition={{ duration: 0.3 }}
           className="md:hidden overflow-hidden"
         >
-          <div className="py-4 space-y-3 border-t border-brand-blue/10">
+          <div className="py-4 btn-group border-t border-brand-blue/10">
             <motion.a
               href="#search"
-              className="flex items-center space-x-3 px-4 py-3 rounded-lg transition-all text-brand-gray"
-              whileHover={{ backgroundColor: 'bg-brand-blue/10' }}
+              className="deep-btn small"
+              whileHover={{ scale: 1.08 }}
               onClick={() => setIsMenuOpen(false)}
             >
               <Search className="w-5 h-5" />
               <span className="font-medium">Search</span>
             </motion.a>
-
             <motion.a
               href="#about"
-              className="block px-4 py-3 rounded-lg transition-all font-medium text-brand-gray hover:bg-brand-blue/10"
+              className="deep-btn small"
+              whileHover={{ scale: 1.08 }}
               onClick={() => setIsMenuOpen(false)}
             >
               About
             </motion.a>
-
             <motion.a
               href="#contact"
-              className="block px-4 py-3 rounded-lg transition-all font-medium text-brand-gray hover:bg-brand-blue/10"
+              className="deep-btn small"
+              whileHover={{ scale: 1.08 }}
               onClick={() => setIsMenuOpen(false)}
             >
               Contact

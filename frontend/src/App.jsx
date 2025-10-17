@@ -98,150 +98,138 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen w-full text-white flex items-center justify-center p-4">
-      <div className="fixed inset-0 flex items-center justify-center z-0 overflow-hidden">
-        <h1 className="unthinkable-text bg-gradient-to-br from-brand-light via-brand-blue to-brand-dark text-transparent bg-clip-text opacity-[0.03] tracking-tighter">
-          UNTHINKABLE
-        </h1>
+    <>
+      {/* Deep space split background and animated stars */}
+      <div className="space-split-bg">
+        <div className="half-circle"></div>
+        <div className="stars-animated"></div>
       </div>
-
-      <main className="w-full max-w-5xl mx-auto z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="bg-brand-navy/40 backdrop-blur-lg border border-brand-blue/10 rounded-2xl shadow-lg shadow-brand-blue/5"
-        >
-          <div className="p-8 space-y-8">
-            <header className="text-center">
-              <h1 className="text-4xl font-bold tracking-tighter mb-1">
-                Unthinkable Vision
-              </h1>
-              <p className="text-sm text-blue-400">AI Visual Search</p>
-            </header>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-              {/* Left Side: Dropzone and URL */}
-              <div className="space-y-6 flex flex-col items-center">
-                <Dropzone
-                  onDrop={(accepted) => setFile(accepted[0])}
-                  disabled={url.trim() !== ""}
-                  accept={{ 'image/*': ['.jpg', '.jpeg', '.png', '.gif', '.webp'] }}
-                >
-                  {({ getRootProps, getInputProps, isDragActive }) => (
-                    <div
-                      {...getRootProps()}
-                      className={`wormhole-dropzone relative w-64 h-64 rounded-full flex items-center justify-center transition-all duration-300 ${
-                        url.trim() !== "" ? "opacity-50 cursor-not-allowed" : ""
-                      }`}
-                    >
-                      <input {...getInputProps()} />
-                      {file ? (
-                        <>
-                          <img
-                            src={URL.createObjectURL(file)}
-                            alt="Preview"
-                            className="w-full h-full object-cover rounded-full"
-                          />
-                          <button
-                            onClick={removeFile}
-                            className="absolute top-2 right-2 w-8 h-8 bg-slate-900/80 rounded-full flex items-center justify-center text-white hover:bg-slate-800 transition-colors"
-                          >
-                            &times;
-                          </button>
-                        </>
-                      ) : (
-                        <>
-                          <div className="wormhole-swirl"></div>
-                          <span className="drop-text font-bold text-5xl animate-pulse">
-                            DROP
-                          </span>
-                        </>
-                      )}
-                    </div>
-                  )}
-                </Dropzone>
-                <div className="w-full max-w-xs text-center">
-                   <input
-                    type="text"
-                    placeholder="Or paste an image URL"
-                    value={url}
-                    onChange={handleUrlChange}
-                    disabled={file !== null}
-                    className={`w-full px-4 py-2 rounded-lg bg-brand-dark/70 border border-brand-blue/20 text-brand-light placeholder:text-brand-blue/30 focus:outline-none focus:ring-2 focus:ring-brand-blue/50 focus:border-brand-blue/50 text-sm transition-all ${
-                      file ? "opacity-50 cursor-not-allowed" : "hover:border-brand-blue/30"
+      {/* Huge UNTHINKABLE background text, centered with 1in margin */}
+      <div className="unthinkable-bg-text">UNTHINKABLE</div>
+      <div className="space-split-content perfect-center">
+        <main className="main-content-card">
+          <header className="main-header">
+            <h1>Unthinkable Vision</h1>
+            <p>AI Visual Search</p>
+          </header>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start w-full">
+            {/* Left Side: Dropzone and URL */}
+            <div className="space-y-6 flex flex-col items-center w-full">
+              <Dropzone
+                onDrop={(accepted) => setFile(accepted[0])}
+                disabled={url.trim() !== ""}
+                accept={{ 'image/*': ['.jpg', '.jpeg', '.png', '.gif', '.webp'] }}
+              >
+                {({ getRootProps, getInputProps, isDragActive }) => (
+                  <div
+                    {...getRootProps()}
+                    className={`wormhole-dropzone relative w-64 h-64 rounded-full flex items-center justify-center transition-all duration-300 ${
+                      url.trim() !== "" ? "opacity-50 cursor-not-allowed" : ""
                     }`}
-                  />
-                </div>
-              </div>
-
-              {/* Right Side: Filters and Search */}
-              <div className="space-y-6">
-                <FilterPanel
-                  filters={filters}
-                  setFilters={setFilters}
-                  onApply={handleFrontendFilter}
+                  >
+                    <input {...getInputProps()} />
+                    {file ? (
+                      <>
+                        <img
+                          src={URL.createObjectURL(file)}
+                          alt="Preview"
+                          className="w-full h-full object-cover rounded-full"
+                        />
+                        <button
+                          onClick={removeFile}
+                          className="absolute top-2 right-2 w-8 h-8 deep-btn small"
+                        >
+                          &times;
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        <div className="wormhole-swirl"></div>
+                        <span className="drop-text font-bold text-5xl animate-pulse">
+                          DROP
+                        </span>
+                      </>
+                    )}
+                  </div>
+                )}
+              </Dropzone>
+              <div className="w-full max-w-xs text-center">
+                <input
+                  type="text"
+                  placeholder="Or paste an image URL"
+                  value={url}
+                  onChange={handleUrlChange}
+                  disabled={file !== null}
+                  className={`w-full px-4 py-2 rounded-lg bg-brand-dark/70 border border-brand-blue/20 text-brand-light placeholder:text-brand-blue/30 focus:outline-none focus:ring-2 focus:ring-brand-blue/50 focus:border-brand-blue/50 text-sm transition-all ${
+                    file ? "opacity-50 cursor-not-allowed" : "hover:border-brand-blue/30"
+                  }`}
                 />
-                <button
-                  onClick={handleSearch}
-                  disabled={loading}
-                  className="w-full px-5 py-3 rounded-lg font-medium flex items-center justify-center gap-2 bg-brand-blue text-brand-light hover:bg-brand-blue/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-brand-blue/30"
-                >
-                  {loading ? (
-                    <>
-                      <span className="w-5 h-5 border-2 border-slate-400 border-t-white rounded-full animate-spin" />
-                      <span>Searching...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Search className="w-5 h-5" />
-                      <span>Find Similar</span>
-                    </>
-                  )}
-                </button>
               </div>
             </div>
-          </div>
-        </motion.div>
-
-        {error && (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mt-6 bg-red-500/10 border border-red-500/20 rounded-lg p-3 text-red-400 text-sm text-center backdrop-blur-sm"
-          >
-            {error}
-          </motion.div>
-        )}
-
-        {!loading && filteredResults.length > 0 && (
-          <motion.section
-            className="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"
-            initial="hidden"
-            animate="visible"
-            variants={{
-              visible: {
-                transition: {
-                  staggerChildren: 0.08,
-                },
-              },
-            }}
-          >
-            {filteredResults.map((product, i) => (
-              <motion.div
-                key={product._id || i}
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  visible: { opacity: 1, y: 0 },
-                }}
-                className="aspect-w-1 aspect-h-1"
+            {/* Right Side: Filters and Search */}
+            <div className="space-y-6 w-full flex flex-col items-center">
+              <FilterPanel
+                filters={filters}
+                setFilters={setFilters}
+                onApply={handleFrontendFilter}
+              />
+              <button
+                onClick={handleSearch}
+                disabled={loading}
+                className="w-full deep-btn accent font-medium flex items-center justify-center gap-2"
               >
-                <ResultCard product={product} />
-              </motion.div>
-            ))}
-          </motion.section>
-        )}
-      </main>
-    </div>
+                {loading ? (
+                  <>
+                    <span className="w-5 h-5 border-2 border-slate-400 border-t-white rounded-full animate-spin" />
+                    <span>Searching...</span>
+                  </>
+                ) : (
+                  <>
+                    <Search className="w-5 h-5" />
+                    <span>Find Similar</span>
+                  </>
+                )}
+              </button>
+            </div>
+          </div>
+          {error && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mt-6 bg-red-500/10 border border-red-500/20 rounded-lg p-3 text-red-400 text-sm text-center backdrop-blur-sm"
+            >
+              {error}
+            </motion.div>
+          )}
+          {!loading && filteredResults.length > 0 && (
+            <motion.section
+              className="result-grid"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                visible: {
+                  transition: {
+                    staggerChildren: 0.08,
+                  },
+                },
+              }}
+            >
+              {filteredResults.map((product, i) => (
+                <motion.div
+                  key={product._id || i}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  className="result-card"
+                >
+                  <ResultCard product={product} />
+                </motion.div>
+              ))}
+            </motion.section>
+          )}
+        </main>
+      </div>
+    </>
   );
 }
